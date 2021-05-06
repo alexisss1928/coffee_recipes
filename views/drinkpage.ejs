@@ -1,0 +1,19 @@
+<%- include('header'); -%>
+<section id="logo">
+  <a href="/"><img src="../images/logo.png" alt="logo de la pagina" /></a>
+</section>
+<section id="drink_recipe">
+  <div class="card_drink">
+    <section class="card_header">
+      <img src="<%= drink.path %>" alt="<%= drink.title %>" />
+    </section>
+    <section class="card_body">
+      <h3><%= drink.title %></h3>
+      <p>Preparación para <%= drink.quantity %> vasos</p> 
+      <p><%= drink.recipe %></p>
+      <a href="/recipe/<%= drink.title %>/delete">Eliminar receta</a>
+    </section>
+  </section>
+  </div>
+  </body>
+</html>
