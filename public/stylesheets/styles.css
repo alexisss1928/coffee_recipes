@@ -205,8 +205,11 @@ a {
   body {
     height: unset;
   }
-  #logo {
+  #logo.logo_center {
     justify-content: center;
+  }
+  #logo img {
+    width: 150px;
   }
   #addDrink {
     width: 90%;
