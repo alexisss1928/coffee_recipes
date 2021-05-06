@@ -6,6 +6,7 @@ btnAdd.addEventListener("click", () => {
   addDrink.classList.add("addDrinkUnhide");
 });
 
-closeAddDrink.addEventListener("click", () => {
+closeAddDrink.addEventListener("click", (e) => {
+  e.preventDefault();
   addDrink.classList.remove("addDrinkUnhide");
 });
