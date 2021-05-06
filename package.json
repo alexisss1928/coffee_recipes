@@ -4,8 +4,7 @@
   "description": "Batch 25 | Hackademy",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js",
+    "start": "node app.js",
     "dev": "nodemon --watch ./ -e html,css,js,ejs"
   },
   "keywords": [
