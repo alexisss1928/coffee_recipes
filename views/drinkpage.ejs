@@ -18,12 +18,10 @@
   <script>
     recipeDel.addEventListener("click", (e) => {
       e.preventDefault();
-      const del = confirm('¿Esta seguro que desea eliminar la receta?')
+      let del = confirm('¿Esta seguro que desea eliminar la receta?')
       if (del == true) {
         window.location = e.target.origin + e.target.pathname
       }
-     /* 
-    console.log(e.target.origin + e.target.pathname); */
 });
   </script>
   </body>

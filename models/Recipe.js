@@ -7,6 +7,7 @@ const recipeSchema = new Schema({
   image: { type: String },
   path: { type: String },
   originalname: { type: String },
+  public_id: { type: String },
 });
 
 module.exports = model("Recipe", recipeSchema);
