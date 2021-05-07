@@ -1,5 +1,11 @@
+/*******************
+Google Fonts
+*******************/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+/*******************
+Style
+*******************/
 body {
   margin: 0;
   padding: 40px;
@@ -89,7 +95,7 @@ textarea {
 }
 
 /*********************
-*Drinks card
+Drinks card
 *********************/
 .card,
 .card_drink {
@@ -162,7 +168,7 @@ a {
 }
 
 /*******************
-*Drinkpage Style
+Drinkpage Style
 *******************/
 #drink_recipe {
   position: absolute;
@@ -201,6 +207,9 @@ a {
   color: #52352e;
 }
 
+/*******************
+Phone Styles
+*******************/
 @media screen and (max-width: 456px) {
   body {
     height: unset;

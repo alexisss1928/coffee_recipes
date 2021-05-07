@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const colors = require("colors");
+const envy = require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 
 // ========================
@@ -24,9 +25,9 @@ const multerUploads = multer({ storage }).single("image");
 const { config, uploader } = require("cloudinary");
 const cloudinaryConfig = (req, res, next) => {
   config({
-    cloud_name: "dogcmulpu",
-    api_key: "829532235448456",
-    api_secret: "iiO-jozikyXBHUihsub6PR1685s",
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
   });
   next();
 };
