@@ -9,8 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Mongo Configuration
 // ========================
 const MongoClient = require("mongodb").MongoClient;
-const connectionString =
-  "mongodb+srv://batchUser:batchUser01@cluster0.m7wk6.mongodb.net/batch_25?retryWrites=true&w=majority";
+const connectionString = process.env.CONNECTION_STRING;
 
 // ========================
 // Multer Configuration
@@ -101,7 +100,6 @@ MongoClient.connect(connectionString, {
     });
 
     app.post("/addDrinks", multerUploads, (req, res) => {
-      console.log(req.file.originalname);
       if (req.file) {
         const file = dataUri(req).content;
         return uploader
