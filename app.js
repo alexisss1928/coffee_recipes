@@ -100,10 +100,11 @@ MongoClient.connect(connectionString, {
     });
 
     app.post("/addDrinks", multerUploads, (req, res) => {
+      console.log(req.file.originalname);
       if (req.file) {
         const file = dataUri(req).content;
         return uploader
-          .upload(file)
+          .upload(file, { resource_type: "image" })
           .then((result) => {
             const page = new Recipe();
 
