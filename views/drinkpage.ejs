@@ -11,9 +11,20 @@
       <h3><%= drink.title %></h3>
       <p>Preparación para <%= drink.quantity %> vasos</p> 
       <p><%= drink.recipe %></p>
-      <a href="/recipe/<%= drink.title %>/delete">Eliminar receta</a>
+      <a href="/recipe/<%= drink.title %>/delete" id="recipeDel">Eliminar receta</a>
     </section>
   </section>
   </div>
+  <script>
+    recipeDel.addEventListener("click", (e) => {
+      e.preventDefault();
+      const del = confirm('¿Esta seguro que desea eliminar la receta?')
+      if (del == true) {
+        window.location = e.target.origin + e.target.pathname
+      }
+     /* 
+    console.log(e.target.origin + e.target.pathname); */
+});
+  </script>
   </body>
 </html>
