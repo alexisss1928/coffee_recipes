@@ -15,7 +15,7 @@ closeAddDrink.addEventListener("click", (e) => {
 fileForm.addEventListener("change", () => {
   let filePath = fileForm.value;
   let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-  if (!allowedExtensions.exec(filePath)) {
+  if (!allowedExtensions.exec(filePath) && fileForm.value != "") {
     alert("Por favor seleccione una imagen con extensión .jpeg/.jpg/.png/.gif");
     fileForm.value = "";
     return false;

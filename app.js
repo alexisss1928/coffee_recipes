@@ -81,12 +81,31 @@ MongoClient.connect(connectionString, {
         });
     });
 
-    app.get("/recipe/:drink", (req, res) => {
-      const { drink } = req.params;
+    /* app.get("/recipe/:drink", (req, res) => {
       db.collection("drinks")
-        .find({ title: drink })
+        .find({ title: req.params.drink })
         .forEach((x) => {
           res.render("drinkpage", { drink: x });
+        });
+    }); */
+
+    app.get("/recipe/:drink", (req, res) => {
+      db.collection("drinks")
+        .find({ title: req.params.drink })
+        .forEach((x) => {
+          db.collection("drinks")
+            .find()
+            .toArray()
+            .then((drinks) => {
+              function randomFunc(a, b) {
+                return 0.5 - Math.random();
+              }
+              drinksList = drinks.sort(randomFunc);
+              res.render("drinkpage", {
+                drink: x,
+                drinksList: drinksList,
+              });
+            });
         });
     });
 

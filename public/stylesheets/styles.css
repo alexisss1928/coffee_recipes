@@ -2,6 +2,7 @@
 Google Fonts
 *******************/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
 
 /*******************
 Style
@@ -10,17 +11,22 @@ body {
   margin: 0;
   padding: 40px;
   box-sizing: border-box;
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url("../images/wp_coffee.jpg");
   background-size: cover;
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
 }
 
+h3 {
+  font-family: "Niconne", cursive;
+}
+
 #logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 #logo img {
@@ -120,12 +126,18 @@ Drinks card
 }
 
 .card_body h3 {
-  font-size: 2rem;
-  line-height: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+  line-height: 0.1rem;
 }
 
 .card_body {
   padding: 20px;
+}
+
+.card_body p:first-of-type {
+  color: #52352e;
+  height: 80px;
 }
 
 a {
@@ -139,13 +151,6 @@ a {
 .card_body a {
   color: #265f26;
   text-align: right;
-}
-
-#drink_recipe .card_body a {
-  color: #db2c2c;
-  position: absolute;
-  right: 130px;
-  bottom: 10px;
 }
 
 .card_footer {
@@ -170,14 +175,20 @@ a {
 /*******************
 Drinkpage Style
 *******************/
-#drink_recipe {
+/* #drink_recipe {
   position: absolute;
   width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+#logo img {
+  width: 150px;
 }
-
+#logo a#back_button img {
+  width: 40px;
+  filter: opacity(0.8);
+}
 .card_drink {
   margin-left: auto;
   margin-right: auto;
@@ -185,7 +196,6 @@ Drinkpage Style
   display: flex;
   justify-content: center;
   align-items: stretch;
-  height: 600px;
 }
 
 .card_drink .card_header {
@@ -196,15 +206,57 @@ Drinkpage Style
 .card_drink .card_header img {
   height: 100%;
   width: unset;
+  margin-left: -100%;
 }
 
 .card_drink .card_body {
   width: 50%;
 }
 
-.card_body p:first-of-type {
+.card_drink .card_body p:first-of-type {
+  height: unset;
+}
+
+.card_body #recipe {
+  height: 35vh;
+  min-height: min-content;
+  overflow: auto;
+}
+
+#drink_recipe .card_body a {
+  color: #db2c2c;
+}
+
+#others_recipe {
+  text-align: center;
+}
+
+#others_recipe h2 {
+  color: #fff;
+  text-shadow: 0px 0px 10px #000;
+}
+
+#others_recipe div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#others_recipe .others_recipe-card {
+  font-family: "Niconne", cursive;
+  width: 250px;
+  height: 150px;
+  background-size: cover;
+  padding: 10px;
+  margin: 0 20px 20px 20px;
   font-weight: bold;
-  color: #52352e;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  text-shadow: 3px 3px 10px #000;
 }
 
 /*******************
@@ -214,12 +266,10 @@ Phone Styles
   body {
     height: unset;
   }
-  #logo.logo_center {
+  /* #logo.logo_center {
     justify-content: center;
-  }
-  #logo img {
-    width: 150px;
-  }
+  } */
+
   #addDrink {
     width: 90%;
   }
@@ -238,6 +288,7 @@ Phone Styles
   }
   .card_drink .card_header {
     width: 100%;
+    height: 200px;
   }
   .card_drink .card_header img {
     height: unset;
@@ -245,6 +296,9 @@ Phone Styles
   }
   .card_drink .card_body {
     width: unset;
+  }
+  .card_body #recipe {
+    height: unset;
   }
   #drink_recipe .card_body a {
     color: #db2c2c;

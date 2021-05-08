@@ -12,28 +12,28 @@
               <span>Nombre de la bebida:</span>
               <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="text" id="title" name="title" />
+            <input type="text" id="title" name="title" required/>
           </p>
           <p>
             <label for="recipe">
               <span>Preparación:</span>
               <strong><abbr title="required">*</abbr></strong>
             </label>
-             <textarea name="recipe" id="recipe" cols="30" rows="10"></textarea>
+             <textarea name="recipe" id="recipe" cols="30" rows="10"></textarea required>
           </p>
           <p>
             <label for="quantity">
               <span>Para cuantas personas:</span>
               <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="number" id="quantity" name="quantity" />
+            <input type="number" id="quantity" name="quantity" required />
           </p>
           <p>
             <label for="image">
               <span>Imagen de la bebida:</span>
               <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="file" accept="image/*" id="image" name="image"/>
+            <input type="file" accept="image/*" id="image" name="image" required/>
           </p>
           <section>
             <p>
@@ -49,22 +49,22 @@
         <% for( let i = 0 ; i < drinks.length ; i++) { %>
         <li>
           <div class="card">
-            <section class="card_header">
+            <div class="card_header">
               <img src="<%= drinks[i].path %>" alt="<%= drinks[i].title %>" />
-            </section>
-            <section class="card_body">
+            </div>
+            <div class="card_body">
               <h3><%= drinks[i].title %></h3>
               <p><%= drinks[i].recipe.slice(0,80) + "..." %></p>
               <a href="/recipe/<%= drinks[i].title %>">Ver mas.</a>
-            </section>
-            <section class="card_footer">
+            </div>
+            <div class="card_footer">
               <p>Preparación para <%= drinks[i].quantity %> vasos</p>
-            </section>
+            </div>
           </div>
         </li>
         <% } %>
       </ul>
     </section>
-    <script src="javascripts/index.js"></script>
+    <script src="../javascripts/index.js"></script>
   </body>
 </html>
