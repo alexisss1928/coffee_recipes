@@ -306,4 +306,7 @@ Phone Styles
     right: 0px;
     bottom: 0px;
   }
+  #others_recipe div {
+    width: 100%;
+  }
 }
