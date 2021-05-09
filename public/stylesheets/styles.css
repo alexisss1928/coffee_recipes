@@ -317,4 +317,7 @@ Phone Styles
   #others_recipe .others_recipe-card {
     width: unset;
   }
+  #drinks_list ul {
+    grid-template-columns: 1fr;
+  }
 }
