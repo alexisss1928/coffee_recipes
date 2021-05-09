@@ -20,7 +20,7 @@
     <h2>Otras recetas que te podrian gustar</h2>
     <div>
     <% for( let i = 0 ; i < 3 ; i++) { %>
-      <a href="/recipe/<%= drinksList[i].title %>"><div class="others_recipe-card" style="background-image: url(<%= drinksList[i].path %>);"><%= drinksList[i].title %></div></a>
+      <a href="/recipe/<%= drinksList[i].title %>"><div class="others_recipe-card" style="background-image: url(<%= drinksList[i].path %>);"><span><%= drinksList[i].title %></span></div></a>
     <% } %>
   </div>
   </section>

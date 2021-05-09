@@ -1,12 +1,12 @@
-/*******************
+/*********************************************************
 Google Fonts
-*******************/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+*********************************************************/
 
-/*******************
+@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@400;700&display=swap");
+/*********************************************************
 Style
-*******************/
+*********************************************************/
+
 body {
   margin: 0;
   padding: 40px;
@@ -21,6 +21,17 @@ body {
 h3 {
   font-family: "Niconne", cursive;
 }
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  color: #db2c2c;
+}
+
+/*********************************************************
+Homepage - Navbar
+*********************************************************/
 
 #logo {
   display: flex;
@@ -42,6 +53,14 @@ button,
   border-radius: 5px;
   font-weight: 700;
   font-size: 1rem;
+}
+
+/*********************************************************
+Homepage - Add Drink Box
+*********************************************************/
+#addDrink button {
+  background-color: #ce9587;
+  color: #52352e;
 }
 
 #addDrink {
@@ -79,15 +98,13 @@ textarea {
   width: 50%;
 }
 
-#addDrink button {
-  background-color: #ce9587;
-  color: #52352e;
-}
-
 .addDrinkUnhide {
   left: 50% !important;
 }
 
+/*********************************************************
+Homepage - Drinks List
+*********************************************************/
 #drinks_list ul {
   display: grid;
   padding: 20px;
@@ -99,20 +116,29 @@ textarea {
 
 #drinks_list li {
   list-style-type: none;
-  width: 100%;
+  width: 90%;
 }
 
-/*********************
-Drinks card
-*********************/
+/***********************************************************
+Homepage - Drinks List Cards
+***********************************************************/
 .card,
 .card_drink {
   background-color: rgba(221, 221, 221, 0.74);
   padding: 0;
-  width: 100%;
+  /* width: 90%; */
   border-radius: 10px;
   overflow: hidden;
   transition: 0.2s;
+}
+
+.card:hover .card_header img {
+  transform: scale(150%) rotate(10deg);
+}
+
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(37, 37, 37, 0.719);
+  transform: translate(-5px, -5px);
 }
 
 .card_header {
@@ -142,14 +168,6 @@ Drinks card
   height: 80px;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-
-  color: #db2c2c;
-}
-
 .card_body a {
   color: #265f26;
   text-align: right;
@@ -165,32 +183,23 @@ a {
   font-weight: 700;
 }
 
-.card:hover .card_header img {
-  transform: scale(150%) rotate(10deg);
-}
+/*********************************************************
+Drinkpage - Logo
+*********************************************************/
 
-.card:hover {
-  box-shadow: 5px 5px 20px rgba(37, 37, 37, 0.719);
-  transform: translate(-5px, -5px);
-}
-
-/*******************
-Drinkpage Style
-*******************/
-/* #drink_recipe {
-  position: absolute;
-  width: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 #logo img {
   width: 150px;
 }
+
 #logo a#back_button img {
   width: 40px;
   filter: opacity(0.8);
 }
+
+/*********************************************************
+Drinkpage - Drinks Card
+*********************************************************/
+
 .card_drink {
   margin-left: auto;
   margin-right: auto;
@@ -198,6 +207,8 @@ Drinkpage Style
   display: flex;
   justify-content: center;
   align-items: stretch;
+  margin-top: 20px;
+  height: unset;
 }
 
 .card_drink .card_header {
@@ -228,6 +239,10 @@ Drinkpage Style
 #drink_recipe .card_body a {
   color: #db2c2c;
 }
+
+/*********************************************************
+Drinkpage - Others recipes
+*********************************************************/
 
 #others_recipe {
   text-align: center;
@@ -261,17 +276,18 @@ Drinkpage Style
   text-shadow: 3px 3px 10px #000;
 }
 
-/*******************
+.others_recipe-card span {
+  margin-right: auto;
+}
+
+/*********************************************************
 Phone Styles
-*******************/
-@media screen and (max-width: 456px) {
+*********************************************************/
+@media screen and (max-width: 800px) {
   body {
     height: unset;
+    padding: 20px;
   }
-  /* #logo.logo_center {
-    justify-content: center;
-  } */
-
   #addDrink {
     width: 90%;
   }
@@ -283,10 +299,8 @@ Phone Styles
     width: unset;
   }
   .card_drink {
-    width: 90%;
-    margin-top: 20px;
-    height: unset;
     flex-direction: column;
+    width: 90%;
   }
   .card_drink .card_header {
     width: 100%;
@@ -319,5 +333,8 @@ Phone Styles
   }
   #drinks_list ul {
     grid-template-columns: 1fr;
+  }
+  #drinks_list li {
+    width: 100%;
   }
 }
