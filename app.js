@@ -9,8 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Mongo Configuration
 // ========================
 const MongoClient = require("mongodb").MongoClient;
-const connectionString =
-  "mongodb+srv://batchUser:batchUser01@cluster0.m7wk6.mongodb.net/batch_25?retryWrites=true&w=majority";
+const connectionString = process.env.CONNECTION_STRING;
 
 // ========================
 // Multer Configuration
@@ -25,9 +24,9 @@ const multerUploads = multer({ storage }).single("image");
 const { config, uploader } = require("cloudinary");
 const cloudinaryConfig = (req, res, next) => {
   config({
-    cloud_name: "dogcmulpu",
-    api_key: "829532235448456",
-    api_secret: "iiO-jozikyXBHUihsub6PR1685s",
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
   });
   next();
 };
